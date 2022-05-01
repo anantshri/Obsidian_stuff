@@ -2,6 +2,13 @@
 Various stuff and tweaks I have around Obsidian
 
 
+### Data available in this Repo
+
+1. Dataview Template to perform past month review : https://github.com/anantshri/Obsidian_stuff/blob/main/dataview/review_last_month.md
+
+3. My current daily notes template depends on Tasks plugin : https://github.com/anantshri/Obsidian_stuff/blob/main/templates/daily_notes.md
+
+
 ## Community Plugins I use
 
 1. [Hypothes.is](https://github.com/weichenw/obsidian-hypothesis-plugin)
