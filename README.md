@@ -4,9 +4,9 @@ Various stuff and tweaks I have around Obsidian
 
 ### Data available in this Repo
 
-1. Dataview Template to perform past month review : https://github.com/anantshri/Obsidian_stuff/blob/main/dataview/review_last_month.md
+1. My current daily notes template : https://github.com/anantshri/Obsidian_stuff/blob/main/templates/daily_notes.md
+2. Monthly Notes template here : https://github.com/anantshri/Obsidian_stuff/blob/main/templates/monthly_note.md
 
-3. My current daily notes template depends on Tasks plugin : https://github.com/anantshri/Obsidian_stuff/blob/main/templates/daily_notes.md
 
 
 ## Community Plugins I use
@@ -17,4 +17,10 @@ Various stuff and tweaks I have around Obsidian
 4. [Tasks](https://github.com/schemar/obsidian-tasks)
 5. [Tweet to Markdown](https://github.com/kbravh/obsidian-tweet-to-markdown)
 6. [Dataview](https://github.com/blacksmithgu/obsidian-dataview)
+7. [Templater](https://github.com/SilentVoid13/Templater)
+8. [Periodic Notes](https://github.com/liamcain/obsidian-periodic-notes)
+
+
+## OLD STUFF PRESERVED FOR REFERENCE
+OLD Dataview Template to perform past month review : https://github.com/anantshri/Obsidian_stuff/blob/main/dataview/review_last_month.md.: This was used before i started using periodic notes plugin
 
