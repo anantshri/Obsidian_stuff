@@ -5,6 +5,7 @@
 not done
 due on {{date:YYYY-MM-DD}}
 group by tags
+short mode
 ```
 
 # Tasks started already 
@@ -13,6 +14,7 @@ not done
 has start date
 starts before {{date+1d:YYYY-MM-DD}}
 group by due
+short mode
 ```
 
 # Notes
