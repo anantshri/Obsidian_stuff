@@ -1,18 +1,21 @@
 # [[{{date-1d:YYYY-MM-DD}}]] <- Today -> [[{{date+1d:YYYY-MM-DD}}]]
 
-# TASKS DUE TODAY
+
+## TASKS DUE TODAY
 ```tasks
 not done
 due on {{date:YYYY-MM-DD}}
+group by priority
 group by tags
 short mode
 ```
 
-# Tasks started already 
+## Tasks started already 
 ```tasks
 not done
 has start date
 starts before {{date+1d:YYYY-MM-DD}}
+group by priority
 group by due
 short mode
 ```
@@ -46,6 +49,8 @@ WHERE !contains(file.path, "{{date:YYYY-MM-DD}}")
 
   AND !contains(file.path, "Daily Journal")
 
+  AND !contains(file.path, "FleetingNotes")
+
   AND file.mday = date("{{date:YYYY-MM-DD}}")
 
 SORT file.mtime DESC
@@ -53,11 +58,12 @@ SORT file.mtime DESC
 ```
 
 ---
-## Tasks
+# Tasks
 ### Overdue
 ```tasks
 not done
 due before {{date:YYYY-MM-DD}}
+group by priority
 group by tags
 ```
 
@@ -70,6 +76,7 @@ group by tags
 ### Tasks by Date
 ```tasks
 not done
+group by priority
 group by due
 group by tags
 ```
