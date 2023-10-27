@@ -51,8 +51,6 @@ WHERE !contains(file.path, "{{date:YYYY-MM-DD}}")
 
   AND !contains(file.path, "Daily Journal")
 
-  AND !contains(file.path, "300-Trainings")
-
   AND file.mday = date("{{date:YYYY-MM-DD}}")
 
 SORT file.mtime DESC
