@@ -22,6 +22,18 @@ group by due
 short mode
 ```
 
+## Highest Priority Items Pending
+
+```tasks
+not done
+priority highest
+group by tags
+short mode
+```
+
+# Notes from Yesterday
+
+![[{{date-1d:YYYY-MM-DD}}#Tomorrow|no-h1 clean]]
 # Notes
 
 
@@ -29,8 +41,8 @@ short mode
 
 
 
-
-
+----
+# Tomorrow
 
 
 
@@ -44,17 +56,11 @@ short mode
 ## Articles and Other Items Created/Edited today
 
 ```dataview
-
 TABLE string(split(string(file.mtime), " - ")[0]) as "Last Modified"
-
-WHERE !contains(file.path, "{{date:YYYY-MM-DD}}")
-
+  WHERE !contains(file.path, "{{date:YYYY-MM-DD}}")
   AND !contains(file.path, "Daily Journal")
-
   AND file.mday = date("{{date:YYYY-MM-DD}}")
-
 SORT file.mtime DESC
-
 ```
 
 ---
@@ -67,13 +73,12 @@ group by priority
 group by tags
 ```
 
+--------
+## new tasks
+
 
 --------
-### new tasks
-
-
---------
-### Done today
+## Done today
 
 ```tasks
 done on {{date:YYYY-MM-DD}}
