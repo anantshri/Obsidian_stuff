@@ -13,21 +13,49 @@
 - [ ] desktop cleanup
 - [ ] downloads cleanup
 
-# Week's Impact 
+# Week's Impact
 
 How did this week impacted me on these areas:
 
 ## Work
-How does it maps to [[101.002 Create Brand Identities]]
+```tasks
+has done date
+done after <% moment(tp.date.weekday("YYYY-MM-DD", 0)).subtract(1,'day').format("YYYY-MM-DD") %>
+done before <% moment(tp.date.weekday("YYYY-MM-DD", 6)).add(1, 'day').format("YYYY-MM-DD") %>
+tags includes #brand
+short mode
+```
+How does it maps to Work
 
-## Finance 
-How does it maps to [[101.001 Make money for Cyfinoid]]
+## Finance
+```tasks
+has done date
+done after <% moment(tp.date.weekday("YYYY-MM-DD", 0)).subtract(1,'day').format("YYYY-MM-DD") %>
+done before <% moment(tp.date.weekday("YYYY-MM-DD", 6)).add(1, 'day').format("YYYY-MM-DD") %>
+tags includes #money
+short mode
+```
+How does it maps to Finance
 
 ## Health
-How does it maps to [[101.003 Attain Better Self-Awareness and Control]]
+```tasks
+has done date
+done after <% moment(tp.date.weekday("YYYY-MM-DD", 0)).subtract(1,'day').format("YYYY-MM-DD") %>
+done before <% moment(tp.date.weekday("YYYY-MM-DD", 6)).add(1, 'day').format("YYYY-MM-DD") %>
+tags includes #health
+short mode
+```
+How does it maps to Health
 
 ## Relationship
-How does this relates to [[101.004 Better relationships]]
+```tasks
+has done date
+done after <% moment(tp.date.weekday("YYYY-MM-DD", 0)).subtract(1,'day').format("YYYY-MM-DD") %>
+done before <% moment(tp.date.weekday("YYYY-MM-DD", 6)).add(1, 'day').format("YYYY-MM-DD") %>
+tags includes #relationship
+short mode
+```
+How does this relates to Relationship
 
 
 
@@ -46,7 +74,7 @@ How does this relates to [[101.004 Better relationships]]
 ## Tasks Done
 ```tasks
 has done date
-done after <% moment(tp.date.weekday("YYYY-MM-DD", 0)).subtract(1,'day').format("YYYY-MM-DD") %> 
+done after <% moment(tp.date.weekday("YYYY-MM-DD", 0)).subtract(1,'day').format("YYYY-MM-DD") %>
 done before <% moment(tp.date.weekday("YYYY-MM-DD", 6)).add(1, 'day').format("YYYY-MM-DD") %>
 group by done
 short mode
