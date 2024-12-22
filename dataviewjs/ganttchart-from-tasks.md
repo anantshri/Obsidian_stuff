@@ -5,6 +5,8 @@
 2. To mark a task for gantt chart, put hashtag #ganttchart on it and ensure start and due date is marked that will plot the entry based on priority.
 
 
+# Task Gantt Chart
+
 ```dataviewjs
 // Priority mapping based on emojis
 const priorityMap = {
@@ -27,6 +29,9 @@ const getPriority = (text) => {
 
 const today = new Date(); // Get the current date
 const todayStr = today.toISOString().split("T")[0]; // YYYY-MM-DD format
+const tomorrow = new Date(today); // Clone the today date 
+tomorrow.setDate(today.getDate() + 1); // Add 1 day 
+const tomorrowStr = tomorrow.toISOString().split("T")[0]; // Format as YYYY-MM-DD
 const tasks = dv.pages("").file.tasks.where(t => t.text.includes("#ganttchart") && t.start && t.due && !t.completed );
 
 if (tasks.length > 0) {
@@ -62,7 +67,7 @@ gantt
         
         if (sanitizedTaskText) { // Ensure non-empty text
 			if (isCritical) {
-				priorityGroups[priority].push(`    ${sanitizedTaskText} overdue :crit, ${startDate}, ${todayStr}`);
+				priorityGroups[priority].push(`    ${sanitizedTaskText} overdue :crit, ${startDate}, ${tomorrowStr}`);
 			} else { 
 			    priorityGroups[priority].push(`    ${sanitizedTaskText} :active, ${startDate}, ${endDate}`);
 	        }
@@ -87,6 +92,11 @@ gantt
 
 ```
 
+# Details of the Gantt Charted Pending Tasks
+```tasks
+not done
+tags includes #ganttchart 
+```
 
 
 
