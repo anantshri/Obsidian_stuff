@@ -1,81 +1,95 @@
+<%*
+let title = tp.file.title; // expects format "YYYY-WXX"
+let dashIndex = title.indexOf("-W");
+let yearStr = title.substring(0, dashIndex);
+let weekStr = title.substring(dashIndex + 2);
+let year = parseInt(yearStr);
+let week = parseInt(weekStr);
+
+// Calculate week boundaries
+let startOfWeek = moment().isoWeekYear(year).isoWeek(week).startOf('isoWeek');
+let endOfWeek = moment(startOfWeek).endOf('isoWeek');
+let startStr = startOfWeek.format("YYYY-MM-DD");
+let endStr = endOfWeek.format("YYYY-MM-DD");
+
+// Day-wise references
+let days = [];
+for (var i = 0; i < 7; i++) {
+  days.push(moment(startOfWeek).add(i, 'days').format("YYYY-MM-DD"));
+}
+%>
+
 # Review thoughts
-
-
-
 
 >[!Highlight of the week]
 >
-
 
 # Weekly Cleanup
 - [ ] cleanup personal email
 - [ ] cleanup company email
 - [ ] desktop cleanup
 - [ ] downloads cleanup
+- [ ] update CRM data
 
 # Week's Impact
 
-How did this week impacted me on these areas:
+How did this week impact me on these areas:
 
 ## Work
 ```tasks
 has done date
-done after <% moment(tp.date.weekday("YYYY-MM-DD", 0)).subtract(1,'day').format("YYYY-MM-DD") %>
-done before <% moment(tp.date.weekday("YYYY-MM-DD", 6)).add(1, 'day').format("YYYY-MM-DD") %>
+done after <% startStr %>
+done before <% endStr %>
 tags includes #brand
 short mode
 ```
-How does it maps to Work
+How does it map to Work
 
 ## Finance
 ```tasks
 has done date
-done after <% moment(tp.date.weekday("YYYY-MM-DD", 0)).subtract(1,'day').format("YYYY-MM-DD") %>
-done before <% moment(tp.date.weekday("YYYY-MM-DD", 6)).add(1, 'day').format("YYYY-MM-DD") %>
+done after <% startStr %>
+done before <% endStr %>
 tags includes #money
 short mode
 ```
-How does it maps to Finance
+How does it map to Finance
 
 ## Health
 ```tasks
 has done date
-done after <% moment(tp.date.weekday("YYYY-MM-DD", 0)).subtract(1,'day').format("YYYY-MM-DD") %>
-done before <% moment(tp.date.weekday("YYYY-MM-DD", 6)).add(1, 'day').format("YYYY-MM-DD") %>
+done after <% startStr %>
+done before <% endStr %>
 tags includes #health
 short mode
 ```
-How does it maps to Health
+How does it map to Health
 
 ## Relationship
 ```tasks
 has done date
-done after <% moment(tp.date.weekday("YYYY-MM-DD", 0)).subtract(1,'day').format("YYYY-MM-DD") %>
-done before <% moment(tp.date.weekday("YYYY-MM-DD", 6)).add(1, 'day').format("YYYY-MM-DD") %>
+done after <% startStr %>
+done before <% endStr %>
 tags includes #relationship
 short mode
 ```
-How does this relates to Relationship
-
-
+How does this relate to relationships
 
 # Notes for Reference
 
-[[<% tp.date.weekday("YYYY-MM-DD", 0) %>|Monday]] ![[<% tp.date.weekday("YYYY-MM-DD", 0) %>#Notes]]
-[[<% tp.date.weekday("YYYY-MM-DD", 1) %>|Tuesday]] ![[<% tp.date.weekday("YYYY-MM-DD", 1) %>#Notes]]
-[[<% tp.date.weekday("YYYY-MM-DD", 2) %>|Wednesday]] ![[<% tp.date.weekday("YYYY-MM-DD", 2) %>#Notes]]
-[[<% tp.date.weekday("YYYY-MM-DD", 3) %>|Thursday]] ![[<% tp.date.weekday("YYYY-MM-DD", 3) %>#Notes]]
-[[<% tp.date.weekday("YYYY-MM-DD", 4) %>|Friday]] ![[<% tp.date.weekday("YYYY-MM-DD", 4) %>#Notes]]
-[[<% tp.date.weekday("YYYY-MM-DD", 5) %>|Saturday]] ![[<% tp.date.weekday("YYYY-MM-DD", 5) %>#Notes]]
-[[<% tp.date.weekday("YYYY-MM-DD", 6) %>|Sunday]] ![[<% tp.date.weekday("YYYY-MM-DD", 6) %>#Notes]]
-
-
+[[<% days[0] %>|Monday]] ![[<% days[0] %>#Notes]]  
+[[<% days[1] %>|Tuesday]] ![[<% days[1] %>#Notes]]  
+[[<% days[2] %>|Wednesday]] ![[<% days[2] %>#Notes]]  
+[[<% days[3] %>|Thursday]] ![[<% days[3] %>#Notes]]  
+[[<% days[4] %>|Friday]] ![[<% days[4] %>#Notes]]  
+[[<% days[5] %>|Saturday]] ![[<% days[5] %>#Notes]]  
+[[<% days[6] %>|Sunday]] ![[<% days[6] %>#Notes]]  
 
 ## Tasks Done
 ```tasks
 has done date
-done after <% moment(tp.date.weekday("YYYY-MM-DD", 0)).subtract(1,'day').format("YYYY-MM-DD") %>
-done before <% moment(tp.date.weekday("YYYY-MM-DD", 6)).add(1, 'day').format("YYYY-MM-DD") %>
+done after <% startStr %>
+done before <% endStr %>
 group by done
 short mode
 ```
